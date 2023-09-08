@@ -69,5 +69,34 @@ fn main() {
         _ => println!("unknown"),
     };
 
+    // loops
+     for num in  1..11{ // 11 is not inclusive
+         if num%2==0 {
+             continue;
+         }
+         println!("x is {}",num);
+     }
+
+    let mut y = 0;
+    while y < 10 {
+        y+=1;
+        println!("inside loops 'Y' value is {}", y);
+    };
+
+    // while true
+    let mut x = 0;
+    loop {
+        x+=1;
+        println!("x={}",x);
+
+        if x==15 {
+            break;
+        }
+    }
+
+
+
+
+
 
 }
