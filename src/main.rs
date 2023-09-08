@@ -27,6 +27,16 @@ fn main() {
     let count:usize = 30;
 
     println!("result value is {}",result);
-    println!("sum is {} and age is {}",sum,age);
+    println!("sum is {  } and age is {}",sum,age);
     println!("mark is {} and count is {}",mark,count);
+
+    // immutable and mutable variables
+    let fees = 25_000;
+    // fees = "hola" // error
+
+    let mut age:i32 = 22;
+    age = 25;
+
+
+
 }
