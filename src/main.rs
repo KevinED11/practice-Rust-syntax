@@ -37,6 +37,11 @@ fn main() {
     let mut age:i32 = 22;
     age = 25;
 
+    // constants
+    const USER_LIMIT:i32 = 100;
+    const PI: f32 = 3.14;
 
+    println!("user limit is {}",USER_LIMIT);  //Display value of the constant
+    println!("pi value is {}",PI);
 
 }
