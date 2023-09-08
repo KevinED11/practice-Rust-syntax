@@ -51,4 +51,15 @@ fn main() {
     let content_string = String::from("kevin");
     println!("length is {}",content_string.len());
 
+
+    // conditionals
+    if age > 18{
+        println!("eres mayor de edad")
+    } else if age < 18 {
+        println!("eres menor de edad")
+    } else {
+        println!("tienes 18 años")
+    }
+
+
 }
