@@ -1,3 +1,5 @@
+use std::arch::x86_64::__get_cpuid_max;
+
 fn main() {
     println!("Hello, world!");
 
@@ -94,8 +96,20 @@ fn main() {
         }
     }
 
+    // functions
+    fn hello(name: &str) {
+        println!("¡Hello {}!", name)
+    }
 
+    hello("kevin");
 
+    fn get_pi_value() -> f64 {
+        22.0/7.0 // implicit return
+        // return 22.0/7.0
+    }
+
+    let pi_value = get_pi_value();
+    println!("PI value is {}", pi_value)
 
 
 
