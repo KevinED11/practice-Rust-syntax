@@ -61,5 +61,13 @@ fn main() {
         println!("tienes 18 años")
     }
 
+    // match statement
+    let status_code = 200;
+    match status_code {
+        200 => println!("ok"),
+        400 => println!("bad request"),
+        _ => println!("unknown"),
+    };
+
 
 }
