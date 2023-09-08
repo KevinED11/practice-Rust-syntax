@@ -44,4 +44,11 @@ fn main() {
     println!("user limit is {}",USER_LIMIT);  //Display value of the constant
     println!("pi value is {}",PI);
 
+    // string objects
+    let empty_string = String::new();
+    println!("length is {}",empty_string.len());
+
+    let content_string = String::from("kevin");
+    println!("length is {}",content_string.len());
+
 }
