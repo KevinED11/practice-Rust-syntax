@@ -1,4 +1,5 @@
 use std::arch::x86_64::__get_cpuid_max;
+use std::fmt;
 
 fn main() {
     println!("Hello, world!");
@@ -164,10 +165,52 @@ fn main() {
     let p1 = Point::get_instance(10,20);
     p1.display();
 
+    // enums
+    let person1 = Person {
+        name:String::from("juanito"),
+        gender:GenderCategory::Male,
+    };
+    let person2 = Person {
+        name:String::from("dani"),
+        gender:GenderCategory::Female,
+    };
+
+    println!("{:?}",person1);
+    println!("{:?}",person2);
+
+    fn print_size(car:CarType) {
+        match car {
+            CarType::Hatch => println!("Small sized car"),
+            CarType::Sedan => println!("medium sized car"),
+            CarType::SUV => println!("Large sized Sports Utility car"),
+        }
+    }
+    print_size(CarType::SUV);
+    print_size(CarType::Hatch);
+    print_size(CarType::Sedan);
+
+
+
 
 
 }
 
+enum CarType {
+    Hatch,
+    Sedan,
+    SUV
+}
+
+#[derive(Debug)]
+enum GenderCategory {
+    Male, Female
+}
+
+#[derive(Debug)]
+struct Person {
+    name: String,
+    gender: GenderCategory
+}
 
 struct Employee {
     name: String,
