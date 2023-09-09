@@ -192,6 +192,23 @@ fn main() {
 
 
 
+    // unpacking
+    let kevin = (22, "kevin", true);
+    let (age, name, married) = kevin;
+    println!("{}, {}, {}", age, name, married);
+
+    let Point {x, y} = p1;
+    println!("x is {} y is {}", x, y);
+
+    let Person {name, gender} = person1;
+    println!("name is {}, gender is {:?}", name, gender);
+
+    let arr: [i32;10] = [1;10];
+    let [first, second, rest @..] = arr;
+    println!("Primer elemento: {}", first);
+    println!("Segundo elemento: {}", second);
+    println!("Resto del array: {:?}", rest);
+
 
 }
 
