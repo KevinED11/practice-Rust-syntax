@@ -109,8 +109,88 @@ fn main() {
     }
 
     let pi_value = get_pi_value();
-    println!("PI value is {}", pi_value)
+    println!("PI value is {}", pi_value);
+
+
+    // structures
+    let tuple_name1 = ("kevin", 22);
+    let tuple_name2:(&str, i32) = ("kevin", 22);
+    println!("{:?}", tuple_name1);
+    println!("string is {:?}",tuple_name1.0);
+    println!("integer is {:?}",tuple_name1.1);
+
+    let my_array = [1, 2, 3, 4, 5];
+    let my_array2:[i32;5] = [6, 7, 8, 9, 10];
+    let my_array3:[i32;10] = [1;10];
+
+    for index in 0..my_array.len() {
+        println!("index is: {} & value is : {}",index,my_array[index]);
+    }
+    for value in my_array2.iter() {
+        println!("value is :{}",value);
+    }
+    // mutable array
+    let mut arr:[i32;4] = [10,20,30,40];
+    arr[1] = 0;
+    println!("{:?}",arr);
+
+    // slice
+    let mut data = [10, 20, 30, 40, 50];
+    let my_slice = &data[1..4];
+    println!("{:?}",my_slice);
+    println!("{:?}", data);
+
+     let my_struct: Employee = Employee {
+         name:String::from("kevin dueñas"),
+         company:String::from("Apple"),
+         age:22
+     };
+    let my_struct2 = Employee {
+        name:String::from("alberto del rio"),
+        company:String::from("Amazon"),
+        age:50,
+    };
+    fn who_is_elder (emp1:Employee,emp2:Employee) -> Employee {
+        if emp1.age>emp2.age {
+            return emp1;
+        }
+        return emp2;
+
+    }
+    let elder = who_is_elder(my_struct, my_struct2);
+    println!("Name is :{} company is {} age is {}",elder.name,elder.company,elder.age);
+    println!("Age is {}", elder.show_age());
+
+    let p1 = Point::get_instance(10,20);
+    p1.display();
 
 
 
+}
+
+
+struct Employee {
+    name: String,
+    company: String,
+    age: u32
+}
+
+impl Employee {
+    fn show_age(&self) -> u32 {
+        self.age
+    }
+}
+
+struct Point {
+    x: i32,
+    y: i32,
+}
+
+impl Point {
+    fn get_instance(x: i32, y: i32) -> Point {
+        Point{x, y}
+    }
+    fn display(&self){
+        println!("x={} y={}",self.x,self.y);
+    }
 }
